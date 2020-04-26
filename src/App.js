@@ -1,7 +1,6 @@
 import React from "react";
+import { IonApp } from "@ionic/react";
 
-function App() {
-  return <div />;
-}
-
-export default App;
+export const App = () => {
+  return <IonApp />;
+};
