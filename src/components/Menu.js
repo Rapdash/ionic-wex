@@ -25,29 +25,29 @@ export const Menu = ({ menuEnabled }) => {
       </IonHeader>
       <IonContent forceOverscroll={false}>
         <IonMenuToggle autoHide={false}>
-        <IonList style={{ paddingTop: 0 }}>
-          <IonItem button onClick={() => history.push("/all-listings")}>
-            <IonLabel>All Listings</IonLabel>
-          </IonItem>
-          <IonItem button onClick={() => history.push("/my-listings")}>
-            <IonLabel>My Listings</IonLabel>
-          </IonItem>
-          <IonItem button onClick={() => history.push("/incoming-offers")}>
-            <IonLabel>Incoming Offers</IonLabel>
-          </IonItem>
-          <IonItem button onClick={() => history.push("/incoming-offers")}>
-            <IonLabel>Outgoing Offers</IonLabel>
-          </IonItem>
-          <IonItem button onClick={() => history.push("/account")}>
-            <IonLabel>Account Management</IonLabel>
-          </IonItem>
-        </IonList>
+          <IonList style={{ paddingTop: 0 }}>
+            <IonItem button onClick={() => history.push("/listings")}>
+              <IonLabel>All Listings</IonLabel>
+            </IonItem>
+            <IonItem button onClick={() => history.push("/my-listings")}>
+              <IonLabel>My Listings</IonLabel>
+            </IonItem>
+            <IonItem button onClick={() => history.push("/incoming-offers")}>
+              <IonLabel>Incoming Offers</IonLabel>
+            </IonItem>
+            <IonItem button onClick={() => history.push("/incoming-offers")}>
+              <IonLabel>Outgoing Offers</IonLabel>
+            </IonItem>
+            <IonItem button onClick={() => history.push("/account")}>
+              <IonLabel>Account Management</IonLabel>
+            </IonItem>
+          </IonList>
         </IonMenuToggle>
       </IonContent>
       <IonFooter>
-            <IonItem lines={false}>
-              <IonLabel>© 2020 The Water Agency, Inc.</IonLabel>
-            </IonItem>
+        <IonItem lines={false}>
+          <IonLabel>© 2020 The Water Agency, Inc.</IonLabel>
+        </IonItem>
       </IonFooter>
     </IonMenu>
   );

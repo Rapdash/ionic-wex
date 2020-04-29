@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import { IonReactRouter } from "@ionic/react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { IonApp, IonSplitPane, IonRouterOutlet } from "@ionic/react";
@@ -21,10 +21,11 @@ export const App = () => {
         <IonSplitPane contentId="main">
           <Menu menuEnabled={loggedIn} />
           <IonRouterOutlet id="main">
-            <Route path="/listings" component={() => <div>Listings</div>} />
-            <Route path="/login" component={() => <div>login</div>} />
-            <Redirect exact from="/" to="/listings" />
-            {!loading && !loggedIn && <Redirect to="/login" />}
+            <Switch>
+              <Route path="/login" component={() => <div>Login</div>} />
+              <Route path="/listings" component={() => <div>Listings</div>} />
+              <Redirect exact from="/" to="/listings" />
+            </Switch>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
