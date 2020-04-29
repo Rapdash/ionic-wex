@@ -6,9 +6,10 @@ import { IonApp, IonSplitPane, IonRouterOutlet } from "@ionic/react";
 
 import { checkToken } from "./state/authSlice";
 import { Menu } from "./components/Menu";
+import { AllListingsPage } from "./pages/AllListingsPage";
 
 export const App = () => {
-  const { loading, user, loggedIn } = useSelector((state) => state.auth);
+  const { loading, loggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,9 +23,23 @@ export const App = () => {
           <Menu menuEnabled={loggedIn} />
           <IonRouterOutlet id="main">
             <Switch>
-              <Route path="/login" component={() => <div>Login</div>} />
-              <Route path="/listings" component={() => <div>Listings</div>} />
-              <Redirect exact from="/" to="/listings" />
+              {!loading && !loggedIn && <Redirect to="/login" />}
+              <Route exact path="/login" component={() => <div>Login</div>} />
+              <Route path="/all-listings" component={AllListingsPage} />
+              <Route
+                path="/my-listings"
+                component={() => <div>My Listings</div>}
+              />
+              <Route
+                path="/incoming-offers"
+                component={() => <div>Incoming Offers</div>}
+              />
+              <Route
+                path="/outgoing-offers"
+                component={() => <div>Outgoing Offers</div>}
+              />
+              <Route path="/account" component={() => <div>Account</div>} />
+              <Redirect exact from="/" to="/all-listings" />
             </Switch>
           </IonRouterOutlet>
         </IonSplitPane>
