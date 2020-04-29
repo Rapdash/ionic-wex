@@ -6,7 +6,6 @@ export const authSlice = createSlice({
   initialState: { loggedIn: false, loading: true, user: null },
   reducers: {
     loadUserSuccess: (_state, action) => {
-      console.log(action);
       return {
         loggedIn: true,
         loading: false,
