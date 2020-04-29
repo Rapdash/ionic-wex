@@ -25,7 +25,7 @@ export const App = () => {
             <Switch>
               {!loading && !loggedIn && <Redirect to="/login" />}
               <Route exact path="/login" component={() => <div>Login</div>} />
-              <Route path="/all-listings" component={AllListingsPage} />
+              <Route exact path="/listings" component={AllListingsPage} />
               <Route
                 path="/my-listings"
                 component={() => <div>My Listings</div>}
@@ -39,7 +39,7 @@ export const App = () => {
                 component={() => <div>Outgoing Offers</div>}
               />
               <Route path="/account" component={() => <div>Account</div>} />
-              <Redirect exact from="/" to="/all-listings" />
+              <Redirect exact from="/" to="/listings" />
             </Switch>
           </IonRouterOutlet>
         </IonSplitPane>

@@ -25,7 +25,7 @@ export const {
   loadListingsFailure,
 } = listingSlice.actions;
 
-export const authReducer = listingSlice.reducer;
+export const listingReducer = listingSlice.reducer;
 
 export const loadAllListings = () => async (dispatch) => {
   try {

@@ -26,7 +26,7 @@ export const Menu = ({ menuEnabled }) => {
       <IonContent forceOverscroll={false}>
         <IonMenuToggle autoHide={false}>
           <IonList style={{ paddingTop: 0 }}>
-            <IonItem button onClick={() => history.push("/all-listings")}>
+            <IonItem button onClick={() => history.push("/listings")}>
               <IonLabel>All Listings</IonLabel>
             </IonItem>
             <IonItem button onClick={() => history.push("/my-listings")}>
