@@ -26,7 +26,7 @@ export const Menu = ({ menuEnabled }) => {
       <IonContent forceOverscroll={false}>
         <IonMenuToggle autoHide={false}>
           <IonList style={{ paddingTop: 0 }}>
-            <IonItem button onClick={() => history.push("/listings")}>
+            <IonItem button onClick={() => history.push("/all-listings")}>
               <IonLabel>All Listings</IonLabel>
             </IonItem>
             <IonItem button onClick={() => history.push("/my-listings")}>
@@ -35,7 +35,7 @@ export const Menu = ({ menuEnabled }) => {
             <IonItem button onClick={() => history.push("/incoming-offers")}>
               <IonLabel>Incoming Offers</IonLabel>
             </IonItem>
-            <IonItem button onClick={() => history.push("/incoming-offers")}>
+            <IonItem button onClick={() => history.push("/outgoing-offers")}>
               <IonLabel>Outgoing Offers</IonLabel>
             </IonItem>
             <IonItem button onClick={() => history.push("/account")}>
