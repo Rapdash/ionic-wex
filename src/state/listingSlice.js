@@ -3,18 +3,25 @@ import Axios from "axios";
 
 export const listingSlice = createSlice({
   name: "listing",
-  initialState: { listings: [], loading: true, error: null },
+  initialState: {
+    listings: [],
+    loading: true,
+    error: null,
+    initialLoadComplete: false,
+  },
   reducers: {
     loadListingsSuccess: (_state, action) => {
       return {
         listings: action.payload,
         loading: false,
+        initialLoadComplete: true,
         error: null,
       };
     },
     loadListingsFailure: (_state, action) => ({
       listings: [],
       loading: false,
+      initialLoadComplete: false,
       error: action.payload,
     }),
   },
@@ -32,7 +39,6 @@ export const loadAllListings = () => async (dispatch) => {
     const res = await Axios.get(`${process.env.REACT_APP_API_URL}/listing`, {
       headers: { Authorization: localStorage.getItem("auth_token") },
     });
-    console.log(res.data);
     dispatch(loadListingsSuccess(res.data));
   } catch {
     dispatch(loadListingsFailure());

@@ -20,7 +20,7 @@ export const Menu = ({ menuEnabled }) => {
     <IonMenu type="overlay" disabled={!menuEnabled} contentId="main">
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>Menu</IonTitle>
+          <IonTitle>The Water Exchange</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent forceOverscroll={false}>
