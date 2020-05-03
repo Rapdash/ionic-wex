@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { IonReactRouter } from "@ionic/react-router";
 import { useSelector, useDispatch } from "react-redux";
-import { IonApp, IonSplitPane, IonRouterOutlet } from "@ionic/react";
+import { IonApp, IonSplitPane, IonRouterOutlet, IonPage } from "@ionic/react";
 
 import { checkToken } from "./state/authSlice";
 import { Menu } from "./components/Menu";
@@ -21,18 +21,18 @@ export const App = () => {
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu menuEnabled={loggedIn} />
-          <IonRouterOutlet id="main">
+          <IonRouterOutlet id="main" animated={false}>
             <Switch>
               {!loading && !loggedIn && <Redirect to="/login" />}
               <Route exact path="/login" component={() => <div>Login</div>} />
               <Route exact path="/listings" component={AllListingsPage} />
               <Route
                 path="/my-listings"
-                component={() => <div>My Listings</div>}
+                component={() => <IonPage>My Listings</IonPage>}
               />
               <Route
                 path="/incoming-offers"
-                component={() => <div>Incoming Offers</div>}
+                component={() => <IonPage>Incoming Offers</IonPage>}
               />
               <Route
                 path="/outgoing-offers"
