@@ -6,7 +6,8 @@ import { IonApp, IonSplitPane, IonRouterOutlet, IonPage } from "@ionic/react";
 
 import { checkToken } from "./state/authSlice";
 import { Menu } from "./components/Menu";
-import { AllListingsPage } from "./pages/AllListingsPage";
+import { AllListings } from "./pages/AllListings";
+import { MyListings } from "./pages/MyListings";
 
 export const App = () => {
   const { loading, loggedIn } = useSelector((state) => state.auth);
@@ -25,11 +26,8 @@ export const App = () => {
             <Switch>
               {!loading && !loggedIn && <Redirect to="/login" />}
               <Route exact path="/login" component={() => <div>Login</div>} />
-              <Route exact path="/listings" component={AllListingsPage} />
-              <Route
-                path="/my-listings"
-                component={() => <IonPage>My Listings</IonPage>}
-              />
+              <Route exact path="/listings" component={AllListings} />
+              <Route path="/my-listings" component={MyListings} />
               <Route
                 path="/incoming-offers"
                 component={() => <IonPage>Incoming Offers</IonPage>}

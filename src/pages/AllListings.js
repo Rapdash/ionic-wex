@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { loadAllListings } from "../state/listingSlice";
 import { useHistory } from "react-router-dom";
 
-export const AllListingsPage = () => {
+export const AllListings = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { listings, initialLoadComplete } = useSelector(
@@ -22,8 +22,6 @@ export const AllListingsPage = () => {
   const listingList = (listings) =>
     listings.map((listing) => {
       if (listing.ownerId !== user.id) {
-        console.log(user.id);
-        console.log(listing.ownerId);
         return (
           <IonItem
             button
