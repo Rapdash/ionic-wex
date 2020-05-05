@@ -20,6 +20,7 @@ export const MyListings = () => {
   }, [dispatch, initialLoadComplete]);
 
   const listingList = (listings) =>
+    // eslint-disable-next-line array-callback-return
     listings.map((listing) => {
       if (listing.ownerId === user.id) {
         return (
@@ -46,7 +47,7 @@ export const MyListings = () => {
 
   return (
     <IonPage>
-      <PageHeader title="All Listings" />
+      <PageHeader title="My Listings" />
       <IonContent>
         <IonList style={{ paddingTop: 0 }}>{listingList(listings)}</IonList>
       </IonContent>
