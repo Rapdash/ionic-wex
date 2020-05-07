@@ -20,6 +20,7 @@ export const AllListings = () => {
   }, [dispatch, initialLoadComplete]);
 
   const listingList = (listings) =>
+    // eslint-disable-next-line array-callback-return
     listings.map((listing) => {
       if (listing.ownerId !== user.id) {
         return (
